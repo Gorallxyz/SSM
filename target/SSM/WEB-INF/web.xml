@@ -6,6 +6,15 @@
   <display-name>Archetype Created Web Application</display-name>
 
 
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:ApplicationConfig.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+
   <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -19,4 +28,11 @@
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <!-- 配置404页面 -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/Template/404.jsp</location>
+  </error-page>
+
 </web-app>

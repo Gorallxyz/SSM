@@ -8,8 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
-    @RequestMapping("/index")
-    public ModelAndView Main(){
+    @RequestMapping("/indexjsp")
+    public ModelAndView Mainjsp(){
         return new ModelAndView("index");
     }
+
 }
