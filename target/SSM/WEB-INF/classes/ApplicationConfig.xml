@@ -15,15 +15,13 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="com.ssm"/>
-
-
+    <context:property-placeholder location="classpath:jdbc.properties"/>
     <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName"  value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://47.107.84.240:3306/ssm"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="driverClassName"  value="${mysql.driverClassName}"/>
+        <property name="url" value="${mysql.url}"/>
+        <property name="username" value="${mysql.username}"/>
+        <property name="password" value="${mysql.password}"/>
     </bean>
-
     <bean id="sessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="druidDataSource"/>
         <property name="configLocation" value="classpath:mybatis.xml"/>
