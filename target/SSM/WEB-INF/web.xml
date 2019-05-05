@@ -13,6 +13,7 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:SpringMvc.xml</param-value>
     </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
